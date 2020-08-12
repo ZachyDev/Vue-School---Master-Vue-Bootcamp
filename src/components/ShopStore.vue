@@ -1,7 +1,7 @@
 <template>
   <div class="shoplist">
       <h1>Shoprite - Shop with us!</h1>
-      <div :key="shoplist.id" v-for="shoplist in shoplists">
+      <div :key="shoplist" v-for="shoplist in shoplists">
         <ShopListItems :shoplist="shoplist"/>
       </div>
     

@@ -1,6 +1,7 @@
 <template>
   <div class="app">
-    <input type="text" v-model="addToCart" placeholder="Add to cart">
+    <input type="text" v-model="newItem" placeholder="Add to cart" @keyup.enter="addToCart">
+    <button type="button" class="btn btn-primary" @click="addToCart">Save Item</button>
     <ShopStore :shoplists="shoplists"/>
   </div>
 </template>
@@ -14,34 +15,15 @@ export default {
   },
   data() {
     return {
-      addToCart: '',
+      newItem: '',
       shoplists: [
         
-        { 
-          id: 1,
-          name: 'Laptop',
-          price: 30000,
-          dealer: 'Techfy'
-        },
-        {
-          id: 2,
-          name: 'Laptop',
-          price: 30000,
-          dealer: 'Techfy'
-        },
-        {
-          id: 3,
-          name: 'Laptop',
-          price: 30000,
-          dealer: 'Techfy'
-        },
-        {
-          id: 4,
-          name: 'Laptop',
-          price: 30000,
-          dealer: 'Techfy'
-        }
       ]
+    }
+  },
+  methods: {
+    addToCart() {
+      return this.shoplists.includes(this.shoplists) ? alert('exits') : this.shoplists.push(this.newItem)
     }
   }
 }
@@ -64,5 +46,14 @@ export default {
     outline: none;
     border:none;
     border-radius: 7px;
+  }
+  .app button{
+    display: flex;
+    width: 100px;
+    margin:0 auto;
+    padding: 10px;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
   }
 </style>

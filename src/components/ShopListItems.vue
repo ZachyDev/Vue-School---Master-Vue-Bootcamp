@@ -1,7 +1,7 @@
 <template>
   <div class="list-items"> 
       <ul>
-          <li> {{ shoplist.dealer }}</li>
+          <li> {{ shoplist }}</li>
       </ul>
   </div>
 </template>
