@@ -22,7 +22,19 @@ export default {
 </script>
 
 <style scoped>
+    .shoplist {
+        width: 80%;
+    }
     .shoplist h1 {
         color: #fff;
+        display: flex;
+        justify-content: center;
+    }
+    .shoplist input[type="text"] {
+        border:none;
+        padding: 10px;
+        width: 500px;
+        display: flex;
+        margin-bottom:30px;
     }
 </style>

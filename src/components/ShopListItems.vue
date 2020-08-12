@@ -16,9 +16,12 @@ export default {
 <style scoped>
     .list-items {
         border: 1px solid #bbb;
-        width: 100%;
         display: flex;
-        justify-content: start;
+        margin-left: 420px;
+        justify-content: center;    
+    }
+    ul {
+        padding: 10px;
     }
     .list-items li {
         color: #fff;

@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    <input type="text" v-model="addToCart" placeholder="Add to cart">
     <ShopStore :shoplists="shoplists"/>
   </div>
 </template>
@@ -13,6 +14,7 @@ export default {
   },
   data() {
     return {
+      addToCart: '',
       shoplists: [
         
         { 
@@ -47,10 +49,20 @@ export default {
 
 <style scoped>
   .app{
-    background-color: #444;
+    background: #444;
     width: 100%;
-    height: 50vh;
+    height: 70vh;
+    max-width: 100%;
+    position: absolute;
+    margin-top: -10px;
+  }
+  .app input[type="text"] {
     display: flex;
-    justify-content: center;
+    width: 250px;
+    height: 30px;
+    margin:15px auto;
+    outline: none;
+    border:none;
+    border-radius: 7px;
   }
 </style>
