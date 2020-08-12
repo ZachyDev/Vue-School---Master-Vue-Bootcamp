@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Home />
+    <Home name="name"/>
   </div>
 </template>
 
@@ -10,6 +10,11 @@ export default {
   name: "App",
   components: {
     Home
+  },
+  data() {
+    return {
+      name: 'vue'
+    }
   }
 }
 </script>
