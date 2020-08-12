@@ -1,24 +1,56 @@
 <template>
-  <div>
-    <Home name="name"/>
+  <div class="app">
+    <ShopStore :shoplists="shoplists"/>
   </div>
 </template>
 
 <script>
-import Home from './components/Home';
+import ShopStore from './components/ShopStore'
 export default {
   name: "App",
   components: {
-    Home
+    ShopStore
   },
   data() {
     return {
-      name: 'vue'
+      shoplists: [
+        
+        { 
+          id: 1,
+          name: 'Laptop',
+          price: 30000,
+          dealer: 'Techfy'
+        },
+        {
+          id: 2,
+          name: 'Laptop',
+          price: 30000,
+          dealer: 'Techfy'
+        },
+        {
+          id: 3,
+          name: 'Laptop',
+          price: 30000,
+          dealer: 'Techfy'
+        },
+        {
+          id: 4,
+          name: 'Laptop',
+          price: 30000,
+          dealer: 'Techfy'
+        }
+      ]
     }
   }
 }
 </script>
 
-<style>
-
+<style scoped>
+  .app{
+    background-color: #444;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+  }
 </style>
