@@ -6,10 +6,11 @@
     </div>
     <div v-if="state==='edit'">
       <input type="text" v-model="newItem" placeholder="Add to cart" @keyup.enter="addToCart">
-      <button type="button" class="btn btn-primary" @click="addToCart">Save Item</button>
+      <button type="button" class="btn btn-primary" @click="addToCart" :disabled="newItem.length === 0">Save Item</button>
       <button class="btn btn-success" @click="showItems" style="margin-top:20px;">Show List</button>
     </div>
     <ShopStore :shoplists="shoplists"/>
+    <a :href="newItem" target="_blank">Dynamic Link</a>
   </div>
 </template>
 
@@ -38,7 +39,7 @@ export default {
     },
     changeState(newState) {
       this.state = newState;
-      this.newItem;
+      this.newItem = '';
     }
   }
 }
