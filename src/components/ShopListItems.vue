@@ -17,7 +17,7 @@ export default {
     .list-items {
         border: 1px solid #bbb;
         display: flex;
-        margin-left: 420px;
+        margin-left: 400px;
         justify-content: center;    
     }
     ul {

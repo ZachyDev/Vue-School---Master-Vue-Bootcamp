@@ -4,7 +4,6 @@
       <div :key="shoplist" v-for="shoplist in shoplists">
         <ShopListItems :shoplist="shoplist"/>
       </div>
-    
   </div>
 </template>
 
@@ -29,6 +28,7 @@ export default {
         color: #fff;
         display: flex;
         justify-content: center;
+        margin-top: 50px;
     }
     .shoplist input[type="text"] {
         border:none;

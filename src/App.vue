@@ -1,8 +1,14 @@
 <template>
   <div class="app">
-    <input type="text" v-model="newItem" placeholder="Add to cart">
-    <button type="button" class="btn btn-primary" @click="addToCart">Save Item</button>
-    <button @click="showItems">Show List</button>
+    <div class="header">
+      <button v-if="state==='default'" class="btn btn-primary" @click="changeState('edit')" style="margin-top:30px;">Add Item</button>
+      <button v-else class="btn btn-danger" @click="changeState('default')" style="margin-top:30px;">Cancel</button>
+    </div>
+    <div v-if="state==='edit'">
+      <input type="text" v-model="newItem" placeholder="Add to cart" @keyup.enter="addToCart">
+      <button type="button" class="btn btn-primary" @click="addToCart">Save Item</button>
+      <button class="btn btn-success" @click="showItems" style="margin-top:20px;">Show List</button>
+    </div>
     <ShopStore :shoplists="shoplists"/>
   </div>
 </template>
@@ -16,6 +22,7 @@ export default {
   },
   data() {
     return {
+      state: 'default',
       newItem: '',
       shoplists: [
         
@@ -28,6 +35,10 @@ export default {
     },
     showItems() {
       return this.shoplists.length > 0 ? alert(this.shoplists) : alert('Shopping cart is empty😔😔')
+    },
+    changeState(newState) {
+      this.state = newState;
+      this.newItem;
     }
   }
 }
@@ -37,7 +48,7 @@ export default {
   .app{
     background: #444;
     width: 100%;
-    height: 70vh;
+    height: 100vh;
     max-width: 100%;
     position: absolute;
     margin-top: -10px;
@@ -46,7 +57,7 @@ export default {
     display: flex;
     width: 250px;
     height: 30px;
-    margin:15px auto;
+    margin:30px auto;
     outline: none;
     border:none;
     border-radius: 7px;
@@ -59,5 +70,13 @@ export default {
     outline: none;
     border-radius: 7px;
     cursor: pointer;
+  }
+  .app p {
+    position: absolute;
+    left: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #fff;
+
   }
 </style>
