@@ -1,7 +1,8 @@
 <template>
   <div class="app">
-    <input type="text" v-model="newItem" placeholder="Add to cart" @keyup.enter="addToCart">
+    <input type="text" v-model="newItem" placeholder="Add to cart">
     <button type="button" class="btn btn-primary" @click="addToCart">Save Item</button>
+    <button @click="showItems">Show List</button>
     <ShopStore :shoplists="shoplists"/>
   </div>
 </template>
@@ -23,7 +24,10 @@ export default {
   },
   methods: {
     addToCart() {
-      return this.shoplists.includes(this.shoplists) ? alert('exits') : this.shoplists.push(this.newItem)
+      this.newItem === '' ? alert('cart cannot be empty') : this.shoplists.push(this.newItem);  
+    },
+    showItems() {
+      return this.shoplists.length > 0 ? alert(this.shoplists) : alert('Shopping cart is empty😔😔')
     }
   }
 }
